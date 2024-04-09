@@ -119,10 +119,10 @@ export default function Home() {
 
   return (
     <div className="w-full flex mx-auto flex-col">
-      <div className='flex justify-between text-center py-4 mb-6 px-2 border-b border-zinc-800'>
-        <h1 className={`${montserrat.className} antialiased gap-1 flex justify-center items-center tracking-tighter text-center text-md sm:text-xl font-bold`}>
-          <GiTomato className="text-md sm:text-xl" /> SZ.POMODORO
-        </h1>
+      <div className='flex justify-between text-center items-center py-4 px-2 border-b border-zinc-300 dark:border-zinc-800'>
+        <div>
+          <GiTomato className="text-2xl" />
+        </div>
         <div className="">
           <div className="mx-auto flex justify-center">
             <Settings
@@ -135,6 +135,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <h1 className={`${montserrat.className} my-8 text-indigo-500 w-fit p-4 mx-auto rounded-lg antialiased flex justify-center items-center tracking-tight text-center text-4xl sm:text-5xl font-black`}>
+
+        SZ.P<GiTomato className="text-3xl sm:text-4xl dark:text-indigo-200 text-indigo-900" />MODORO
+      </h1>
       <div className=" min-w-[300px] max-w-[600px] flex justify-center mx-auto w-full" >
         <div className="w-full">
           <Timers

@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from './ui/label';
 import { Switch } from './ui/switch';
 import { Button, buttonVariants } from './ui/button';
+import { ToggleMode } from './ToggleMode';
 
 
 const Settings = ({
@@ -62,15 +63,15 @@ const Settings = ({
                                 ))}
                             </div>
                         </div>
-                        <DialogClose onClick={updateTimeDefaultValue} className={`${buttonVariants({ variant: 'default' })} w-full`}>Save Settings</DialogClose>
-
-                        {/* <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2'>
                             <DialogTitle>Theme</DialogTitle>
                             <DialogDescription className='flex justify-between items-center'>
                                 <Label className='text-muted-foreground'>Dark Mode</Label>
-                                <Switch size='sm' />
+                                <ToggleMode />
                             </DialogDescription>
-                        </div> */}
+                        </div>
+                        <DialogClose onClick={updateTimeDefaultValue} className={`${buttonVariants({ variant: 'default' })} w-full`}>Save Settings</DialogClose>
+
                     </DialogHeader>
                 </DialogContent>
             </Dialog >

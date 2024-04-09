@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import About from "@/components/About";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,15 +12,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={inter.className}>
-        <main className="flex max-w-2xl flex-col items-center mx-auto justify-between">
-          {/* <Navbar /> */}
-          {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex max-w-2xl flex-col items-center mx-auto justify-between">
+            {/* <Navbar /> */}
+            {children}
 
-          <About />
-        </main>
+            <About />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
